@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="100dp"
+        android:onClick="buttonVideo"
         android:text="Tomar video"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgWorkout" />
@@ -55,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="60dp"
+        android:onClick="buttonGallery"
         android:text="Abrir Galeria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgWorkout" />
