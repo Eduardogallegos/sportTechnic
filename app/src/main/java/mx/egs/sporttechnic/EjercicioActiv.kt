@@ -56,7 +56,7 @@ class EjercicioActiv : AppCompatActivity() {
             imgWorkout.setImageResource(R.drawable.rope_jump)
         }else if (nombreEjercicio == "Burpees"){
             tvDescripEjercicio.text = "Descendemos a posición de lagartija, " +
-                    "pecho toca el suelo, nos reincoorporamos y hacemos un salto " 
+                    "pecho toca el suelo, nos reincoorporamos y hacemos un salto. "
             imgWorkout.setImageResource(R.drawable.burpee)
         }
 
