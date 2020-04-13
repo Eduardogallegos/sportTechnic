@@ -38,12 +38,12 @@ class EjercicioActiv : AppCompatActivity() {
                     "al romper el paralelo, subir rápido"
             imgWorkout.setImageResource(R.drawable.squat)
         }else if (nombreEjercicio == "Desplantes"){
-            tvDescripEjercicio.text = "Pies abiertos en tiejra uno atras, otro adelante, " +
+            tvDescripEjercicio.text = "Pies abiertos en tijera uno atras, otro adelante, " +
                     "descenso lento, sin que las rodilla delantera pase la punta del pie, " +
                     "al romper el paralelo, subir rápido"
             imgWorkout.setImageResource(R.drawable.halfsquat)
         }else if (nombreEjercicio == "Abdominales"){
-            tvDescripEjercicio.text = "Acostado en el suelo, felxiona tus rodillas " +
+            tvDescripEjercicio.text = "Acostado en el suelo, flexiona tus rodillas " +
                     "el torso sube y desciende lento "
             imgWorkout.setImageResource(R.drawable.situp)
         }else if (nombreEjercicio == "Plancha"){
@@ -52,7 +52,7 @@ class EjercicioActiv : AppCompatActivity() {
             imgWorkout.setImageResource(R.drawable.pushup)
         } else if (nombreEjercicio == "Saltar la cuerda"){
             tvDescripEjercicio.text = "Pies juntos, codos pegados al cuerpo, " +
-                    "lo único que movemos son las muñecas"
+                    "lo único que se mueve son las muñecas"
             imgWorkout.setImageResource(R.drawable.rope_jump)
         }else if (nombreEjercicio == "Burpees"){
             tvDescripEjercicio.text = "Descendemos a posición de lagartija, " +
