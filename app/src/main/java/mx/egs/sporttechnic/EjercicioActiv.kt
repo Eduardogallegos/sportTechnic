@@ -1,7 +1,12 @@
 package mx.egs.sporttechnic
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
 import kotlinx.android.synthetic.main.activity_ejercicio.*
 
 class EjercicioActiv : AppCompatActivity() {
@@ -45,5 +50,43 @@ class EjercicioActiv : AppCompatActivity() {
             imgWorkout.setImageResource(R.drawable.pushup)
         }
 
+    }
+
+    private fun dispatchTakeVideoIntent() {
+        Intent(MediaStore.ACTION_VIDEO_CAPTURE).also { takeVideoIntent ->
+            takeVideoIntent.resolveActivity(packageManager)?.also {
+                startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE)
+            }
+        }
+    }
+
+    private fun dispatchGalleryIntent(){
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, REQUEST_GALLERY_ACCESS)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+        super.onActivityResult(requestCode, resultCode, intent)
+        if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
+            val videoUri: Uri? = intent?.data
+
+        }
+        else if (requestCode == REQUEST_GALLERY_ACCESS && resultCode == Activity.RESULT_OK){
+            val videoUri: Uri? = intent?.data
+        }
+    }
+
+    fun buttonVideo(view: View){
+        dispatchTakeVideoIntent()
+    }
+
+    fun buttonGallery(view: View){
+        dispatchGalleryIntent()
+    }
+
+    companion object {
+        const val REQUEST_VIDEO_CAPTURE = 1
+        const val REQUEST_GALLERY_ACCESS = 2
+        const val PERMISSIONS = 101
     }
 }
