@@ -2,6 +2,7 @@ package mx.egs.sporttechnic
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.MediaController
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,6 +18,9 @@ class reproducirVideo : AppCompatActivity() {
         val video: Uri = Uri.parse(extras?.getString("videoUri"))
 
         val videoView = findViewById<VideoView>(R.id.videoView)
+        val controller = MediaController(this)
+        videoView.setMediaController(controller)
+        controller.setMediaPlayer(videoView)
         videoView.setVideoURI(video)
         videoView.requestFocus()
         videoView.start()
