@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="buttonGallery"
-            android:text="Elije otro video"
+            android:text="Elije otro Video"
             android:textAlignment="center"
             android:textSize="18sp" />
 
