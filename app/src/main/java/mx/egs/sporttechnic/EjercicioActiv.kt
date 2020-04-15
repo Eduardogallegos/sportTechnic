@@ -23,39 +23,39 @@ class EjercicioActiv : AppCompatActivity() {
         tvNombreEjercicio.text = nombreEjercicio
 
         if (nombreEjercicio == "Lagartijas"){
-            tvDescripEjercicio.text = "Acuéstate boca abajo, " +
+            tv.text = "Acuéstate boca abajo, " +
                     "con las manos apoyadas en el piso a la altura de los hombros," +
                     " empuja al suelo para poder levantarte"
             imgWorkout.setImageResource(R.drawable.pushup)
         }else if (nombreEjercicio == "Fondos"){
-            tvDescripEjercicio.text = "Colorar las manos sobre un escalon, " +
+            tv.text = "Colorar las manos sobre un escalon, " +
                     "pies paralelos, descender unicamente con los brazos, " +
                     "al tocar el suelo con los gluteos subir"
             imgWorkout.setImageResource(R.drawable.dips)
         }else if (nombreEjercicio == "Sentadillas"){
-            tvDescripEjercicio.text = "Pies a la altura de los hombros, " +
+            tv.text = "Pies a la altura de los hombros, " +
                     "descenso lento, sin que las rodillas pasen las puntas de los pies, " +
                     "al romper el paralelo, subir rápido"
             imgWorkout.setImageResource(R.drawable.squat)
         }else if (nombreEjercicio == "Desplantes"){
-            tvDescripEjercicio.text = "Pies abiertos en tijera uno atras, otro adelante, " +
+            tv.text = "Pies abiertos en tijera uno atras, otro adelante, " +
                     "descenso lento, sin que las rodilla delantera pase la punta del pie, " +
                     "al romper el paralelo, subir rápido"
             imgWorkout.setImageResource(R.drawable.halfsquat)
         }else if (nombreEjercicio == "Abdominales"){
-            tvDescripEjercicio.text = "Acostado en el suelo, flexiona tus rodillas " +
+            tv.text = "Acostado en el suelo, flexiona tus rodillas " +
                     "el torso sube y desciende lento "
             imgWorkout.setImageResource(R.drawable.situp)
         }else if (nombreEjercicio == "Plancha"){
-            tvDescripEjercicio.text = "Colodo en posición de lagartija, " +
+            tv.text = "Colodo en posición de lagartija, " +
                     "mantener espalda, cadera y rodillas rectas"
             imgWorkout.setImageResource(R.drawable.pushup)
         } else if (nombreEjercicio == "Saltar la cuerda"){
-            tvDescripEjercicio.text = "Pies juntos, codos pegados al cuerpo, " +
+            tv.text = "Pies juntos, codos pegados al cuerpo, " +
                     "lo único que se mueve son las muñecas"
             imgWorkout.setImageResource(R.drawable.rope_jump)
         }else if (nombreEjercicio == "Burpees"){
-            tvDescripEjercicio.text = "Descendemos a posición de lagartija, " +
+            tv.text = "Descendemos a posición de lagartija, " +
                     "pecho toca el suelo, nos reincoorporamos y hacemos un salto."
             imgWorkout.setImageResource(R.drawable.burpee)
         }
