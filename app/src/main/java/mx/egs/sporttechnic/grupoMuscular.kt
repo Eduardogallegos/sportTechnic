@@ -9,7 +9,7 @@ class grupoMuscular (val nombre: String, val descripcion: String, val img: Strin
                 "arm"),
             grupoMuscular( "Pierna",
                 "Trabaja todo el tren inferior con estos ejercicios",
-                "leg"),
+                "legs"),
             grupoMuscular("Abdomen",
                 "Trabaja la zona media del cuerpo para lucir un abdomen definido",
                 "abs"),
