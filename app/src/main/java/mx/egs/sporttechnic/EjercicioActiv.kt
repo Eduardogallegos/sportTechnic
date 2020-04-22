@@ -47,7 +47,7 @@ class EjercicioActiv : AppCompatActivity() {
                     "el torso sube y desciende lento "
             imgWorkout.setImageResource(R.drawable.situp)
         }else if (nombreEjercicio == "Plancha"){
-            tvDescripEjercicio.text = "Colodo en posición de lagartija, " +
+            tvDescripEjercicio.text = "Posición de lagartija, " +
                     "mantener espalda, cadera y rodillas rectas"
             imgWorkout.setImageResource(R.drawable.pushup)
         } else if (nombreEjercicio == "Saltar la cuerda"){
