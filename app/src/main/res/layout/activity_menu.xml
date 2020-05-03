@@ -17,24 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--
-    <RelativeLayout
-        android:id="@+id/rlv1"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/casa"
-            android:scaleType="fitXY"/>
-
-    </RelativeLayout>
--->
 
     <TextView
         android:id="@+id/Sport"
