@@ -5,9 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/redTool"
+        android:minHeight="72dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/sports_logo" />
 
@@ -19,7 +30,7 @@
             android:id="@+id/tiName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="15dp"
             android:hint="Nombre" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -28,7 +39,6 @@
         android:id="@+id/etBirthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Fecha de nacimiento (dd/mm/aaaa)"
         android:inputType="date" />
@@ -37,7 +47,6 @@
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -84,7 +93,6 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Contraseña (mínimo 6 caracteres)"
         android:inputType="textPassword" />
@@ -93,7 +101,6 @@
         android:id="@+id/etPassVerif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Repita la contraseña"
         android:inputType="textPassword" />

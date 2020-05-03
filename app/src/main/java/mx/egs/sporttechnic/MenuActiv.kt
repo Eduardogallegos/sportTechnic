@@ -30,6 +30,10 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
         finish()
     }
 
+    fun calendar(view: View){
+        startActivity(Intent(this, CalendarActivity::class.java))
+    }
+
     private fun configurarRecycler() {
         val layout = LinearLayoutManager(this)
         layout.orientation = LinearLayoutManager.VERTICAL
