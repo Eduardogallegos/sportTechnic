@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:hint="Fecha de nacimiento"
+        android:hint="Fecha de nacimiento (dd/mm/aaaa)"
         android:inputType="date" />
 
     <RadioGroup
@@ -103,6 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:onClick="createAccount"
         android:text="Crear cuenta" />
 
 </LinearLayout>

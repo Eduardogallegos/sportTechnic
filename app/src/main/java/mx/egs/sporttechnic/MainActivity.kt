@@ -24,9 +24,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        /*if(auth.currentUser != null){
+        if(auth.currentUser != null){
             startActivity(Intent(this, MenuActiv::class.java))
-        }*/
+            finish()
+        }
     }
 
     fun createAccount(view: View) {
@@ -50,33 +51,4 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
-
-
-    /*private fun sendEmailVerification() {
-        // Disable button
-        verifyEmailButton.isEnabled = false
-
-        // Send verification email
-        // [START send_email_verification]
-        val user = auth.currentUser
-        user?.sendEmailVerification()
-            ?.addOnCompleteListener(this) { task ->
-                // [START_EXCLUDE]
-                // Re-enable button
-                verifyEmailButton.isEnabled = true
-
-                if (task.isSuccessful) {
-                    Toast.makeText(baseContext,
-                        "Verification email sent to ${user.email} ",
-                        Toast.LENGTH_SHORT).show()
-                } else {
-                    Log.e(TAG, "sendEmailVerification", task.exception)
-                    Toast.makeText(baseContext,
-                        "Failed to send verification email.",
-                        Toast.LENGTH_SHORT).show()
-                }
-                // [END_EXCLUDE]
-            }
-        // [END send_email_verification]
-    }*/
 }

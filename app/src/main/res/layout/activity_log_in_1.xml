@@ -21,7 +21,9 @@
             android:id="@+id/etMailLogIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo electrónico" />
+            android:layout_marginTop="15dp"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -31,11 +33,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Contraseña"
+        android:layout_marginTop="15dp"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="logIn"
         android:text="Iniciar sesión" />
 </LinearLayout>
