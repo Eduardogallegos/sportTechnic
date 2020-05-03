@@ -115,6 +115,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
+                    android:onClick="showUser"
                     android:scaleType="fitXY"
                     android:src="@drawable/monito"
                     tools:srcCompat="@drawable/monito" />

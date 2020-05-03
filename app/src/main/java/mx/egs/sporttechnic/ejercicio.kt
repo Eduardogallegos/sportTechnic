@@ -25,7 +25,7 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String) {
                 "situp"),
             ejercicio( "Plancha",
                 "Corrige tu técnica al hacer planchas",
-                "pushup")
+                "planks")
         )
         val arrEjerciciosCardio = arrayOf(
             ejercicio("Saltar la cuerda",

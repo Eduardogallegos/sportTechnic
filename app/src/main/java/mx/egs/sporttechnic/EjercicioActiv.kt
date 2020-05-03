@@ -49,7 +49,7 @@ class EjercicioActiv : AppCompatActivity() {
         }else if (nombreEjercicio == "Plancha"){
             tvDescripEjercicio.text = "Posición de lagartija, " +
                     "mantener espalda, cadera y rodillas rectas"
-            imgWorkout.setImageResource(R.drawable.pushup)
+            imgWorkout.setImageResource(R.drawable.planks)
         } else if (nombreEjercicio == "Saltar la cuerda"){
             tvDescripEjercicio.text = "Pies juntos, codos pegados al cuerpo, " +
                     "lo único que se mueve son las muñecas"

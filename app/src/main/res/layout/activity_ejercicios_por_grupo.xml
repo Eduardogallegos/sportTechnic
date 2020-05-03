@@ -6,27 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".EjerciciosPorGrupo">
 
-    <TextView
-        android:id="@+id/tvGrupoMuscular"
-        android:layout_width="0dp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        android:textAlignment="textStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:background="@color/redTool"
+        android:minHeight="72dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Sport"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:text="Sport Technic"
+        android:textColor="@color/lightShades"
+        android:textSize="48dp"
+        android:fontFamily="@font/bebasneue"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/tvGrupoMuscular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textColor="@color/lightShades"
+            android:textAlignment="textStart"
+            android:textSize="36dp"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="Selecciona el ejercicio:"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGrupoMuscular" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerEjercicios"
@@ -40,4 +84,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
