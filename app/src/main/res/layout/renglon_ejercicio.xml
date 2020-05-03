@@ -3,37 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
+    android:background="@color/lightShades"
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_vertical"
+    android:layout_margin="4dp"
     android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/imgEjercicio"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="1"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvEjercicio"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvDescripcionEjercicio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imgEjercicio"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:srcCompat="@android:drawable/arrow_up_float"
+                android:scaleType="fitXY"/>
 
+            <TextView
+                android:id="@+id/tvEjercicio"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgEjercicio"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="Titulo"
+                android:textSize="48dp"
+                android:gravity="right"
+                android:textAlignment="gravity"
+                android:fontFamily="@font/bebasneue"
+                android:textColor="@color/lightShades"/>
+
+            <TextView
+                android:id="@+id/tvDescripcionEjercicio"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:text="Descripcion"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@+id/imgEjercicio"
+                />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

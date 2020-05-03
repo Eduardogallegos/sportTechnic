@@ -49,4 +49,9 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
         intRecyclerEjercicios.putExtra("GRUPO", grupo)
         startActivity(intRecyclerEjercicios)
     }
+
+
+    fun showUser(view: View){
+        startActivity(Intent(this, DisplayUsers::class.java))
+    }
 }

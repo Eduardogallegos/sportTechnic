@@ -26,7 +26,7 @@
             android:layout_height="130dp"
             app:srcCompat="@android:drawable/arrow_up_float"
             android:scaleType="fitXY"/>
-
+<!--
         <TextView
             android:id="@+id/tvGrupo"
             style="@style/TextAppearance.AppCompat.Headline"
@@ -38,6 +38,7 @@
             android:padding="8dp"
             android:text="Titulo"
             android:textColor="@color/lightShades"/>
+            -->
 
         <TextView
         android:id="@+id/tvDescripcionGrupo"

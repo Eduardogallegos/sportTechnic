@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MenuActiv">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -115,6 +115,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
+                    android:onClick="showUser"
                     android:scaleType="fitXY"
                     android:src="@drawable/monito"
                     tools:srcCompat="@drawable/monito" />

@@ -29,7 +29,7 @@ class adaptadorGrupos (private val contexto: Context, var arrGrupos: Array<grupo
         val grupo = arrGrupos[position]
         val id = contexto.resources.getIdentifier("mx.egs.sporttechnic:drawable/"+ grupo.img, null, null)
         holder.vistaRenglon.imgGrupo.setImageResource(id)
-        holder.vistaRenglon.tvGrupo.text = grupo.nombre
+        //holder.vistaRenglon.tvGrupo.text = grupo.nombre
         holder.vistaRenglon.tvDescripcionGrupo.text = grupo.descripcion
 
         holder.vistaRenglon.setOnClickListener{
