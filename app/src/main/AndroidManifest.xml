@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity android:name=".DisplayUsers"></activity>
+        <activity android:name=".CalendarActivity"></activity>
         <activity android:name=".CreateAccountActiv" />
         <activity android:name=".LogInActiv" />
         <activity android:name=".MenuActiv" />

@@ -98,7 +98,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/ibHome"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
@@ -109,7 +109,7 @@
                     app:srcCompat="@drawable/casa" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/imProfile"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
@@ -121,12 +121,13 @@
                     tools:srcCompat="@drawable/monito" />
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/ibCalendar"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
+                    android:onClick="calendar"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/calendario" />
             </LinearLayout>
