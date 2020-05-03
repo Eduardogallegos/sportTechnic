@@ -1,39 +1,82 @@
 package mx.egs.sporttechnic
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.text.TextUtils
+import android.util.Log
+import android.widget.Toast
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), ListenerRecyclerGrupos {
-    var AdaptadorGrupos : adaptadorGrupos? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
 
+class MainActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        configurarRecycler()
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance();
     }
 
-    private fun configurarRecycler() {
-        val layout = LinearLayoutManager(this)
-        layout.orientation = LinearLayoutManager.VERTICAL
-        recyclerGrupos.layoutManager = layout
-
-        AdaptadorGrupos = adaptadorGrupos(this, grupoMuscular.arrGruposGenerales)
-        AdaptadorGrupos?.listenerGrupos = this
-        recyclerGrupos.adapter = AdaptadorGrupos
-
-        val divisor = DividerItemDecoration(this, layout.orientation)
-        recyclerGrupos.addItemDecoration(divisor)
+    override fun onStart() {
+        super.onStart()
+        /*if(auth.currentUser != null){
+            startActivity(Intent(this, MenuActiv::class.java))
+        }*/
     }
 
-    override fun itemClicked(position: Int) {
-        val intRecyclerEjercicios = Intent(this, EjerciciosPorGrupo::class.java)
-        val grupo = AdaptadorGrupos?.arrGrupos?.get(position)?.nombre
-        intRecyclerEjercicios.putExtra("GRUPO", grupo)
-        startActivity(intRecyclerEjercicios)
+    fun createAccount(view: View) {
+        startActivity(Intent(this, CreateAccountActiv::class.java))
     }
+
+    fun signIn(view: View) {
+        startActivity(Intent(this, LogInActiv::class.java))
+    }
+
+    fun signInAnonymously(view: View){
+        auth.signInAnonymously()
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    startActivity(Intent(this, MenuActiv::class.java))
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(baseContext, "Falla en autenticación como invitado," +
+                            " compruebe su conexión a internet.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+
+    /*private fun sendEmailVerification() {
+        // Disable button
+        verifyEmailButton.isEnabled = false
+
+        // Send verification email
+        // [START send_email_verification]
+        val user = auth.currentUser
+        user?.sendEmailVerification()
+            ?.addOnCompleteListener(this) { task ->
+                // [START_EXCLUDE]
+                // Re-enable button
+                verifyEmailButton.isEnabled = true
+
+                if (task.isSuccessful) {
+                    Toast.makeText(baseContext,
+                        "Verification email sent to ${user.email} ",
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e(TAG, "sendEmailVerification", task.exception)
+                    Toast.makeText(baseContext,
+                        "Failed to send verification email.",
+                        Toast.LENGTH_SHORT).show()
+                }
+                // [END_EXCLUDE]
+            }
+        // [END send_email_verification]
+    }*/
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "684916352586",
+    "firebase_url": "https://sporttechnic-546fe.firebaseio.com",
+    "project_id": "sporttechnic-546fe",
+    "storage_bucket": "sporttechnic-546fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684916352586:android:8db4ae1382975a717fa8b3",
+        "android_client_info": {
+          "package_name": "mx.egs.sporttechnic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684916352586-6sd640d69ci8lpbhh19ihtr41nk16bbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.egs.sporttechnic",
+            "certificate_hash": "b91279e15a94120a103136843a2d92691c3684f6"
+          }
+        },
+        {
+          "client_id": "684916352586-k6bi3a4967oplum2129kcm9pk2ihr9ih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpn34slPsBzf-eqX28jGcyOl4PhZC8yKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684916352586-k6bi3a4967oplum2129kcm9pk2ihr9ih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
