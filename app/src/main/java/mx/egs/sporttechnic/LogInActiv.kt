@@ -32,6 +32,14 @@ class LogInActiv : AppCompatActivity() {
         }
     }
 
+    fun changePasword(view: View){
+        val mail = auth.currentUser?.email
+        if (mail != null) {
+            auth.sendPasswordResetEmail(mail)
+            Toast.makeText(this, "Se ha enviado un correo a $mail para restablecer la contraseña", Toast.LENGTH_LONG).show()
+        }
+    }
+
     private fun logInFirebase() {
         auth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(this){task->
             if(task.isSuccessful){
