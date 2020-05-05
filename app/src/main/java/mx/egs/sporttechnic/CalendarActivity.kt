@@ -62,6 +62,7 @@ class CalendarActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 Toast.makeText(this, "Entrenamiento guardado", Toast.LENGTH_SHORT)
                     .show()
+                programNotification(date, hour)
             } else {
                 Toast.makeText(
                     this,
@@ -72,5 +73,9 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
+    fun programNotification(dateString: String,timeString: String){
+        val not = NotificationUtils()
+        not.setNotification(Calendar.getInstance().timeInMillis, timeString, dateString, this)
+    }
 
 }

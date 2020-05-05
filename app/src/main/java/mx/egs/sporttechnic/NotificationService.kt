@@ -1,18 +1,32 @@
 package mx.egs.sporttechnic
 
 import android.annotation.SuppressLint
-import android.app.*
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import android.os.Build
-import androidx.core.app.NotificationCompat
+import androidx.core.app.JobIntentService
 import java.util.*
 
-class NotificationService: IntentService("NotificationService") {
+
+class NotificationService: JobIntentService() {
     private lateinit var mNotification: Notification
-    private val mNotificationId: Int = 1000
+    val JOB_ID = 1
+
+    fun enqueueWork(context: Context, work: Intent) {
+        enqueueWork(context, NotificationService::class.java, JOB_ID, work)
+    }
+
+    private fun createID(): Int {
+        val ID : Int = System.currentTimeMillis().toInt()
+        return ID
+    }
+
 
     @SuppressLint("NewApi")
     private fun createChannel() {
@@ -39,16 +53,14 @@ class NotificationService: IntentService("NotificationService") {
 
     companion object {
 
-        const val CHANNEL_ID = "samples.notification.devdeeds.com.CHANNEL_ID"
-        const val CHANNEL_NAME = "Sample Notification"
+        const val CHANNEL_ID = "mx.egs.sporttechnic.CHANNEL_ID"
+        const val CHANNEL_NAME = "Reminder Notification"
     }
 
 
-    override fun onHandleIntent(intent: Intent?) {
-
-        //Create Channel
+    override fun onHandleWork(intent: Intent) {
+    //Create Channel
         createChannel()
-
 
         var timestamp: Long = 0
         if (intent != null && intent.extras != null) {
@@ -62,7 +74,6 @@ class NotificationService: IntentService("NotificationService") {
 
 
             val context = this.applicationContext
-            var notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             val notifyIntent = Intent(this, MenuActiv::class.java)
 
             val title = "Sport Technic Reminder"
@@ -83,10 +94,7 @@ class NotificationService: IntentService("NotificationService") {
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-
                 mNotification = Notification.Builder(this, CHANNEL_ID)
-                    // Set the intent that will fire when the user taps the notification
                     .setContentIntent(pendingIntent)
                     .setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
                     .setLargeIcon(BitmapFactory.decodeResource(res, R.mipmap.ic_launcher))
@@ -96,7 +104,6 @@ class NotificationService: IntentService("NotificationService") {
                         .bigText(message))
                     .setContentText(message).build()
             } else {
-
                 mNotification = Notification.Builder(this)
                     // Set the intent that will fire when the user taps the notification
                     .setContentIntent(pendingIntent)
@@ -112,13 +119,11 @@ class NotificationService: IntentService("NotificationService") {
 
             }
 
-
-
-            notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val mNotificationId = createID()
+            var notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             // mNotificationId is a unique int for each notification that you must define
             notificationManager.notify(mNotificationId, mNotification)
         }
-
 
     }
 }
