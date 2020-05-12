@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_ejercicio.*
 
 class EjercicioActiv : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ejercicio)
@@ -20,43 +21,32 @@ class EjercicioActiv : AppCompatActivity() {
 
     private fun configurarInterfaz() {
         val nombreEjercicio = intent.getStringExtra("WORKOUT")
+        val instruccion = intent.getStringExtra("instrucciones")
         tvNombreEjercicio.text = nombreEjercicio
 
         if (nombreEjercicio == "Lagartijas"){
-            tvDescripEjercicio.text = "Acuéstate boca abajo, " +
-                    "con las manos apoyadas en el piso a la altura de los hombros," +
-                    " empuja al suelo para poder levantarte"
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.pushup)
         }else if (nombreEjercicio == "Fondos"){
-            tvDescripEjercicio.text = "Colorar las manos sobre un escalon, " +
-                    "pies paralelos, descender unicamente con los brazos, " +
-                    "al tocar el suelo con los gluteos subir"
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.dips)
         }else if (nombreEjercicio == "Sentadillas"){
-            tvDescripEjercicio.text = "Pies a la altura de los hombros, " +
-                    "descenso lento, sin que las rodillas pasen las puntas de los pies, " +
-                    "al romper el paralelo, subir rápido"
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.squat)
         }else if (nombreEjercicio == "Desplantes"){
-            tvDescripEjercicio.text = "Pies abiertos en tijera uno atras, otro adelante, " +
-                    "descenso lento, sin que las rodilla delantera pase la punta del pie, " +
-                    "al romper el paralelo, subir rápido"
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.halfsquat)
         }else if (nombreEjercicio == "Abdominales"){
-            tvDescripEjercicio.text = "Acostado en el suelo, flexiona tus rodillas " +
-                    "el torso sube y desciende lento "
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.situp)
         }else if (nombreEjercicio == "Plancha"){
-            tvDescripEjercicio.text = "Posición de lagartija, " +
-                    "mantener espalda, cadera y rodillas rectas"
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.planks)
         } else if (nombreEjercicio == "Saltar la cuerda"){
-            tvDescripEjercicio.text = "Pies juntos, codos pegados al cuerpo, " +
-                    "lo único que se mueve son las muñecas"
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.rope_jump)
         }else if (nombreEjercicio == "Burpees"){
-            tvDescripEjercicio.text = "Descendemos a posición de lagartija, " +
-                    "pecho toca el suelo, nos reincoorporamos y hacemos un salto."
+            tvDescripEjercicio.text = instruccion
             imgWorkout.setImageResource(R.drawable.burpee)
         }
 
@@ -75,21 +65,31 @@ class EjercicioActiv : AppCompatActivity() {
         startActivityForResult(intent, REQUEST_GALLERY_ACCESS)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         super.onActivityResult(requestCode, resultCode, intent)
         if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
             val videoUri: Uri? = intent?.data
             val intent = Intent(this, reproducirVideo::class.java)
             intent.putExtra("videoUri", videoUri.toString())
+            getExName(intent)
             startActivity(intent)
         }
         else if (requestCode == REQUEST_GALLERY_ACCESS && resultCode == Activity.RESULT_OK){
             val videoUri: Uri? = intent?.data
             val intent = Intent(this, reproducirVideo::class.java)
             intent.putExtra("videoUri", videoUri.toString())
+            getExName(intent)
             startActivity(intent)
         }
     }
+
+    private fun getExName(intent2: Intent) {
+        val nombreEjercicio = intent.getStringExtra("WORKOUT")
+        intent2.putExtra("nombreEx",nombreEjercicio)
+        val instruccion = intent.getStringExtra("instrucciones")
+        intent2.putExtra("instrucciones", instruccion)
+    }
+
 
     fun buttonVideo(view: View){
         dispatchTakeVideoIntent()

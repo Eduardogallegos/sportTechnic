@@ -26,7 +26,7 @@ class CalendarActivity : AppCompatActivity() {
         user = FirebaseAuth.getInstance()
 
         val trainingsFrag= TrainingFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.contenedorFragmentos, trainingsFrag).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.contenedor, trainingsFrag).commit()
 
     }
 

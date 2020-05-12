@@ -46,6 +46,8 @@ class EjerciciosPorGrupo : AppCompatActivity(), ListenerRecyclerGrupos {
         val intEjercicio = Intent(this, EjercicioActiv::class.java)
         val workout = adaptadorEjercicios?.arrEjercicios?.get(position)?.nombre
         intEjercicio.putExtra("WORKOUT", workout)
+        val instrucciones = adaptadorEjercicios?.arrEjercicios?.get(position)?.instrucciones
+        intEjercicio.putExtra("instrucciones", instrucciones)
         startActivity(intEjercicio)
     }
 }
