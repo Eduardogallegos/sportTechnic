@@ -111,6 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:onClick="createAccount"
-        android:text="Crear cuenta" />
+        android:text="Crear cuenta"
+        android:background="@drawable/buttongallery"
+        android:textColor="@color/lightShades"/>
 
 </LinearLayout>
