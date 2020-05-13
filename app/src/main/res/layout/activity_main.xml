@@ -26,6 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="createAccount"
+            android:textColor="@color/lightShades"
+            android:background="@drawable/buttonpassword"
+            android:layout_marginRight="16dp"
             android:text="Crear cuenta" />
 
         <Button
@@ -33,6 +36,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="signIn"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/lightShades"
+            android:background="@drawable/buttonlogin"
             android:text="Iniciar sesión" />
     </LinearLayout>
 
@@ -41,5 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="signInAnonymously"
-        android:text="Entrar sin cuenta" />
+        android:layout_marginTop="8dp"
+        android:textColor="@color/lightShades"
+        android:text="Entrar sin cuenta"
+        android:background="@drawable/buttongallery"/>
 </LinearLayout>

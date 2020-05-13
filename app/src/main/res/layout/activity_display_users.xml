@@ -162,7 +162,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@drawable/buttonvideo"
+        android:background="@drawable/buttongallery"
         android:onClick="changePasword"
         android:text="Cambiar contraseña"
         android:textColor="@color/lightShades"
