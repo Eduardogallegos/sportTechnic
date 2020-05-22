@@ -1,2 +1,3 @@
 rootProject.name='sportTechnic'
 include ':app'
+include ':posenet'
