@@ -1,5 +1,6 @@
 package mx.egs.sporttechnic
 
+import PosenetActivity
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -21,6 +22,9 @@ class reproducirVideo : AppCompatActivity() {
         setContentView(R.layout.activity_reproducir_video)
         configurarInterfaz()
 
+        // Fragmento de posenet
+        val posenetFrag = PosenetActivity()
+        supportFragmentManager.beginTransaction().replace(R.id.modelContenedor, posenetFrag).commit()
 
        // REPRODUCIR VIDEO OBTENIDO DE GALERIA O GRABADO
         val extras = intent.extras

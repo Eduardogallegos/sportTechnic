@@ -37,9 +37,11 @@ import android.hardware.camera2.TotalCaptureResult
 import android.media.Image
 import android.media.ImageReader
 import android.media.ImageReader.OnImageAvailableListener
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
+import android.provider.MediaStore
 import android.util.Log
 import android.util.Size
 import android.util.SparseIntArray
@@ -50,6 +52,7 @@ import android.view.SurfaceView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
@@ -95,14 +98,14 @@ class PosenetActivity :
   private var paint = Paint()
 
   /** A shape for extracting frame data.   */
-  private val PREVIEW_WIDTH = 640
-  private val PREVIEW_HEIGHT = 480
+  /*private val PREVIEW_WIDTH = 640
+  private val PREVIEW_HEIGHT = 480*/
 
   /** An object for the Posenet library.    */
   private lateinit var posenet: Posenet
 
   /** ID of the current [CameraDevice].   */
-  private var cameraId: String? = null
+  /*private var cameraId: String? = null
 
   /** A [SurfaceView] for camera preview.   */
   private var surfaceView: SurfaceView? = null
@@ -153,12 +156,12 @@ class PosenetActivity :
   private var flashSupported = false
 
   /** Orientation of the camera sensor.   */
-  private var sensorOrientation: Int? = null
+  private var sensorOrientation: Int? = null*/
 
   /** Abstract interface to someone holding a display surface.    */
   private var surfaceHolder: SurfaceHolder? = null
 
-  /** [CameraDevice.StateCallback] is called when [CameraDevice] changes its state.   */
+  /*/** [CameraDevice.StateCallback] is called when [CameraDevice] changes its state.   */
   private val stateCallback = object : CameraDevice.StateCallback() {
 
     override fun onOpened(cameraDevice: CameraDevice) {
@@ -177,12 +180,12 @@ class PosenetActivity :
       onDisconnected(cameraDevice)
       this@PosenetActivity.activity?.finish()
     }
-  }
+  }*/
 
   /**
    * A [CameraCaptureSession.CaptureCallback] that handles events related to JPEG capture.
    */
-  private val captureCallback = object : CameraCaptureSession.CaptureCallback() {
+  /*private val captureCallback = object : CameraCaptureSession.CaptureCallback() {
     override fun onCaptureProgressed(
       session: CameraCaptureSession,
       request: CaptureRequest,
@@ -196,7 +199,7 @@ class PosenetActivity :
       result: TotalCaptureResult
     ) {
     }
-  }
+  }*/
 
   /**
    * Shows a [Toast] on the UI thread.
@@ -212,36 +215,41 @@ class PosenetActivity :
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View? = inflater.inflate(R.layout.tfe_pn_activity_posenet, container, false)
+  ): View? = inflater.inflate(R.layout.fragment_posenet_activ, container, false)
 
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+ /* override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     surfaceView = view.findViewById(R.id.surfaceView)
     surfaceHolder = surfaceView!!.holder
-  }
+  }*/
 
-  override fun onResume() {
+  /*override fun onResume() {
     super.onResume()
     startBackgroundThread()
-  }
+  }*/
 
   override fun onStart() {
     super.onStart()
-    openCamera()
+    //openCamera()
     posenet = Posenet(this.context!!)
+    val extras = activity?.intent?.extras
+    val video: Uri = Uri.parse(extras?.getString("videoUri"))
+    //val imageUri = data?.getData()
+    val bitmap = MediaStore.Images.Media.getBitmap(context?.contentResolver, video)
+    processImage(bitmap)
   }
 
-  override fun onPause() {
+  /*override fun onPause() {
     closeCamera()
     stopBackgroundThread()
     super.onPause()
-  }
+  }*/
 
   override fun onDestroy() {
     super.onDestroy()
     posenet.close()
   }
 
-  private fun requestCameraPermission() {
+  /*private fun requestCameraPermission() {
     if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
       //Solucion Temporal
       requestPermissions(arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
@@ -249,7 +257,7 @@ class PosenetActivity :
     } else {
       requestPermissions(arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
     }
-  }
+  }*/
 
   override fun onRequestPermissionsResult(
     requestCode: Int,
@@ -273,7 +281,7 @@ class PosenetActivity :
   /**
    * Sets up member variables related to camera.
    */
-  private fun setUpCameraOutputs() {
+  /*private fun setUpCameraOutputs() {
 
     val activity = activity
     val manager = activity!!.getSystemService(Context.CAMERA_SERVICE) as CameraManager
@@ -322,12 +330,12 @@ class PosenetActivity :
       ErrorDialog.newInstance(getString(R.string.camera_error))
         .show(childFragmentManager, FRAGMENT_DIALOG)
     }
-  }
+  }*/
 
   /**
    * Opens the camera specified by [PosenetActivity.cameraId].
    */
-  private fun openCamera() {
+  /*private fun openCamera() {
     val permissionCamera = ContextCompat.checkSelfPermission(activity!!, Manifest.permission.CAMERA)
     if (permissionCamera != PackageManager.PERMISSION_GRANTED) {
       requestCameraPermission()
@@ -345,12 +353,12 @@ class PosenetActivity :
     } catch (e: InterruptedException) {
       throw RuntimeException("Interrupted while trying to lock camera opening.", e)
     }
-  }
+  }*/
 
   /**
    * Closes the current [CameraDevice].
    */
-  private fun closeCamera() {
+  /*private fun closeCamera() {
     if (captureSession == null) {
       return
     }
@@ -368,20 +376,20 @@ class PosenetActivity :
     } finally {
       cameraOpenCloseLock.release()
     }
-  }
+  }*/
 
   /**
    * Starts a background thread and its [Handler].
    */
-  private fun startBackgroundThread() {
+  /*private fun startBackgroundThread() {
     backgroundThread = HandlerThread("imageAvailableListener").also { it.start() }
     backgroundHandler = Handler(backgroundThread!!.looper)
-  }
+  }*/
 
   /**
    * Stops the background thread and its [Handler].
    */
-  private fun stopBackgroundThread() {
+  /*private fun stopBackgroundThread() {
     backgroundThread?.quitSafely()
     try {
       backgroundThread?.join()
@@ -390,10 +398,10 @@ class PosenetActivity :
     } catch (e: InterruptedException) {
       Log.e(TAG, e.toString())
     }
-  }
+  }*/
 
   /** Fill the yuvBytes with data from image planes.   */
-  private fun fillBytes(planes: Array<Image.Plane>, yuvBytes: Array<ByteArray?>) {
+  /*private fun fillBytes(planes: Array<Image.Plane>, yuvBytes: Array<ByteArray?>) {
     // Row stride is the total number of bytes occupied in memory by a row of an image.
     // Because of the variable row stride it's not possible to know in
     // advance the actual necessary dimensions of the yuv planes.
@@ -451,7 +459,7 @@ class PosenetActivity :
         processImage(rotatedBitmap)
       }
     }
-  }
+  }*/
 
   /** Crop Bitmap to maintain aspect ratio of model input.   */
   private fun cropBitmap(bitmap: Bitmap): Bitmap {
@@ -597,7 +605,7 @@ class PosenetActivity :
   /**
    * Creates a new [CameraCaptureSession] for camera preview.
    */
-  private fun createCameraPreviewSession() {
+  /*private fun createCameraPreviewSession() {
     try {
 
       // We capture images from preview in YUV format.
@@ -654,16 +662,16 @@ class PosenetActivity :
     } catch (e: CameraAccessException) {
       Log.e(TAG, e.toString())
     }
-  }
+  }*/
 
-  private fun setAutoFlash(requestBuilder: CaptureRequest.Builder) {
+  /*private fun setAutoFlash(requestBuilder: CaptureRequest.Builder) {
     if (flashSupported) {
       requestBuilder.set(
         CaptureRequest.CONTROL_AE_MODE,
         CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH
       )
     }
-  }
+  }*/
 
   /**
    * Shows an error message dialog.
