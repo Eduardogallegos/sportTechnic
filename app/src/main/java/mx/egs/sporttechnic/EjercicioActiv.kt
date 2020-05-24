@@ -69,14 +69,14 @@ class EjercicioActiv : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, intent)
         if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
             val videoUri: Uri? = intent?.data
-            val intent = Intent(this, reproducirVideo::class.java)
+            val intent = Intent(this, RealTime_Pose::class.java)
             intent.putExtra("videoUri", videoUri.toString())
             getExName(intent)
             startActivity(intent)
         }
         else if (requestCode == REQUEST_GALLERY_ACCESS && resultCode == Activity.RESULT_OK){
             val videoUri: Uri? = intent?.data
-            val intent = Intent(this, reproducirVideo::class.java)
+            val intent = Intent(this, RealTime_Pose::class.java)
             intent.putExtra("videoUri", videoUri.toString())
             getExName(intent)
             startActivity(intent)

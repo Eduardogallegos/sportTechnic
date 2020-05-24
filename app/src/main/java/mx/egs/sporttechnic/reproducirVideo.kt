@@ -22,9 +22,7 @@ class reproducirVideo : AppCompatActivity() {
         setContentView(R.layout.activity_reproducir_video)
         configurarInterfaz()
 
-        // Fragmento de posenet
-        val posenetFrag = PosenetActivity()
-        supportFragmentManager.beginTransaction().replace(R.id.modelContenedor, posenetFrag).commit()
+
 
        // REPRODUCIR VIDEO OBTENIDO DE GALERIA O GRABADO
         val extras = intent.extras
@@ -32,10 +30,19 @@ class reproducirVideo : AppCompatActivity() {
         val videoView = findViewById<VideoView>(R.id.videoView)
         playVideo(videoView, video)
 
+        // Fragmento de posenet
+        if (video != null){
+            val posenetFrag = PosenetActivity()
+            supportFragmentManager.beginTransaction().replace(R.id.modelContenedor, posenetFrag).commit()
+        }
+
         btnRegresar.setOnClickListener {
             val intent2 = Intent(this, MainActivity::class.java)
             startActivity(intent2)
         }
+
+
+
 
     }
 
