@@ -12,6 +12,9 @@
     <string name="camera_error">This device does not support Camera2 API</string>
     <string name="camera_permission">Camera permission is needed</string>
 
+    <string name="disclaimer">Please connect the phone to a screen you can see or stream the contents
+    of your phone to a screen where you can watch yourself.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
