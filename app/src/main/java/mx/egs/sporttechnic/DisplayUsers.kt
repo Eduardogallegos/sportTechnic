@@ -28,7 +28,7 @@ class DisplayUsers : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         baseDatos = FirebaseDatabase.getInstance()
-        displayData()
+         displayData()
     }
 
     private fun displayData(){

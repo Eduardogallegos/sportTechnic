@@ -65,25 +65,13 @@
             android:textAlignment="center"
             android:textSize="18sp" />
 
-        <LinearLayout
+
+        <FrameLayout
+            android:id="@+id/modelContenedor"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <VideoView
-                android:id="@+id/videoView"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5" />
-
-            <VideoView
-                android:id="@+id/videoEx"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-        </LinearLayout>
+        </FrameLayout>
 
     </LinearLayout>
 

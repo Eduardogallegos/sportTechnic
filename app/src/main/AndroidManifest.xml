@@ -6,9 +6,11 @@
         android:name="android.hardware.camera2"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -17,8 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".DisplayUsers"></activity>
-        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".RealTime_Pose"></activity>
+        <activity android:name=".DisplayUsers" />
+        <activity android:name=".CalendarActivity" />
         <activity android:name=".CreateAccountActiv" />
         <activity android:name=".LogInActiv" />
         <activity android:name=".MenuActiv" />
@@ -33,11 +36,14 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".AlarmReceiver"
-            android:enabled="true"/>
-        <service android:name=".NotificationService"
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true" />
+
+        <service
+            android:name=".NotificationService"
             android:enabled="true"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

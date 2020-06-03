@@ -1,5 +1,6 @@
 package mx.egs.sporttechnic
 
+import PosenetActivity
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -21,17 +22,23 @@ class reproducirVideo : AppCompatActivity() {
         setContentView(R.layout.activity_reproducir_video)
         configurarInterfaz()
 
-
        // REPRODUCIR VIDEO OBTENIDO DE GALERIA O GRABADO
         val extras = intent.extras
         val video: Uri = Uri.parse(extras?.getString("videoUri"))
-        val videoView = findViewById<VideoView>(R.id.videoView)
-        playVideo(videoView, video)
+
+        // Fragmento de posenet
+        if (video != null){
+            val posenetFrag = PosenetActivity()
+            supportFragmentManager.beginTransaction().replace(R.id.modelContenedor, posenetFrag).commit()
+        }
 
         btnRegresar.setOnClickListener {
             val intent2 = Intent(this, MainActivity::class.java)
             startActivity(intent2)
         }
+
+
+
 
     }
 
@@ -39,40 +46,39 @@ class reproducirVideo : AppCompatActivity() {
         val nombreEx = intent.getStringExtra("nombreEx")
         val instrucciones = intent.getStringExtra("instrucciones")
         tvNombre.text = nombreEx
-        val videoView1 = findViewById<VideoView>(R.id.videoEx)
 
         if (nombreEx == "Lagartijas") {
             tvDescrip.text = instrucciones
-            val uri1 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.pushup)
-            playAnimacion(videoView1, uri1)
+            //val uri1 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.pushup)
+            //playAnimacion(videoView1, uri1)
         }else if (nombreEx == "Fondos"){
             tvDescrip.text = instrucciones
-            val uri2 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.dips)
-            playAnimacion(videoView1, uri2)
+            //val uri2 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.dips)
+            //playAnimacion(videoView1, uri2)
         }else if (nombreEx == "Sentadillas"){
             tvDescrip.text = instrucciones
-            val uri3 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.squat)
-            playAnimacion(videoView1, uri3)
+            //val uri3 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.squat)
+            //playAnimacion(videoView1, uri3)
         }else if (nombreEx == "Desplantes"){
             tvDescrip.text = instrucciones
-            val uri4 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.desplante)
-            playAnimacion(videoView1, uri4)
+            //val uri4 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.desplante)
+            //playAnimacion(videoView1, uri4)
         }else if (nombreEx == "Abdominales"){
             tvDescrip.text = instrucciones
-            val uri5 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.abs)
-            playAnimacion(videoView1, uri5)
+            //val uri5 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.abs)
+            //playAnimacion(videoView1, uri5)
         }else if (nombreEx == "Plancha"){
             tvDescrip.text = instrucciones
-            val uri6 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.plank)
-            playAnimacion(videoView1, uri6)
+            //val uri6 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.plank)
+            //playAnimacion(videoView1, uri6)
         } else if (nombreEx == "Saltar la cuerda"){
             tvDescrip.text = instrucciones
             //val uri7 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.pull)
             //playAnimacion(videoView1, uri7)
         }else if (nombreEx == "Burpees"){
             tvDescrip.text = instrucciones
-            val uri8 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.burpee)
-            playAnimacion(videoView1, uri8)
+            //val uri8 = Uri.parse("android.resource://mx.egs.sporttechnic/" + R.raw.burpee)
+            //playAnimacion(videoView1, uri8)
 
         }
 
@@ -110,7 +116,7 @@ class reproducirVideo : AppCompatActivity() {
         if (requestCode == EjercicioActiv.REQUEST_GALLERY_ACCESS && resultCode == Activity.RESULT_OK) {
             val videoUri: Uri? = intent?.data
             if (videoUri != null) {
-                playVideo(videoView,videoUri)
+                //playVideo(videoView,videoUri)
             }
         }
     }
