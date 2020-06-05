@@ -13,7 +13,7 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String, v
             ejercicio( "Fondos",
                 "Corrige tu técnica al hacer fondos",
                 "dips",
-                "Colorar las manos sobre un escalon, " +
+                "Colocar las manos sobre un escalon, " +
                         "pies paralelos, descender unicamente con los brazos, " +
                         "al tocar el suelo con los gluteos subir")
         )

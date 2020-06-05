@@ -25,7 +25,6 @@
         <activity android:name=".CreateAccountActiv" />
         <activity android:name=".LogInActiv" />
         <activity android:name=".MenuActiv" />
-        <activity android:name=".reproducirVideo" />
         <activity android:name=".EjercicioActiv" />
         <activity android:name=".EjerciciosPorGrupo" />
         <activity android:name=".MainActivity">

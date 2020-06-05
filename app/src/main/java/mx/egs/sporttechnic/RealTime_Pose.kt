@@ -1,9 +1,11 @@
 package mx.egs.sporttechnic
 
 import PosenetActivity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_reproducir_video.*
+import android.view.View
+import kotlinx.android.synthetic.main.activity_real_time__pose.*
 
 class RealTime_Pose : AppCompatActivity() {
 
@@ -39,5 +41,9 @@ class RealTime_Pose : AppCompatActivity() {
             tvDescrip.text = instrucciones
         }
 
+    }
+
+    fun regresarMenu(view:View){
+        startActivity(Intent(this, MenuActiv::class.java))
     }
 }

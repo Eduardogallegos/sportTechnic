@@ -85,7 +85,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="45dp"
             android:layout_weight="1.2"
             android:orientation="vertical">
 
@@ -99,18 +99,18 @@
 
                 <ImageButton
                     android:id="@+id/ibHome"
-                    android:layout_width="30dp"
+                    android:layout_width="25dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:scaleType="fitXY"
 
-                    app:srcCompat="@drawable/casa" />
+                    app:srcCompat="@drawable/information" />
 
                 <ImageButton
                     android:id="@+id/imProfile"
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
@@ -122,7 +122,7 @@
 
                 <ImageButton
                     android:id="@+id/ibCalendar"
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
