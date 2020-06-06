@@ -26,7 +26,7 @@
             android:layout_height="130dp"
             app:srcCompat="@android:drawable/arrow_up_float"
             android:scaleType="fitXY"/>
-<!--
+
         <TextView
             android:id="@+id/tvGrupo"
             style="@style/TextAppearance.AppCompat.Headline"
@@ -35,10 +35,15 @@
             android:layout_alignBottom="@+id/imgGrupo"
             android:layout_alignParentStart="true"
             android:layout_marginStart="8dp"
-            android:padding="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
             android:text="Titulo"
+            android:textSize="48dp"
+            android:gravity="right"
+            android:textAlignment="gravity"
+            android:fontFamily="@font/bebasneue"
             android:textColor="@color/lightShades"/>
-            -->
+
 
         <TextView
         android:id="@+id/tvDescripcionGrupo"
