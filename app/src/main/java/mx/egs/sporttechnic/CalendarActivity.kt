@@ -32,11 +32,10 @@ class CalendarActivity : AppCompatActivity() {
 
     fun newTrainingDate(view: View){
         val calendar = Calendar.getInstance()
-        var dia = calendar.get(Calendar.DAY_OF_MONTH)
-        var mes = calendar.get(Calendar.MONTH)
-        var anio = calendar.get(Calendar.YEAR)
-        val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-            // Display Selected date in textbox
+        val dia = calendar.get(Calendar.DAY_OF_MONTH)
+        val mes = calendar.get(Calendar.MONTH)
+        val anio = calendar.get(Calendar.YEAR)
+        val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
             date = "$dayOfMonth/$monthOfYear/$year"
             newTrainingHour()
         }, anio, mes, dia)
@@ -45,9 +44,9 @@ class CalendarActivity : AppCompatActivity() {
 
     private fun newTrainingHour() {
         val calendar = Calendar.getInstance()
-        var hora = calendar.get(Calendar.HOUR_OF_DAY)
-        var minutos = calendar.get(Calendar.MINUTE)
-        val tpd = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener{view, hourOfDay, minute ->
+        val hora = calendar.get(Calendar.HOUR_OF_DAY)
+        val minutos = calendar.get(Calendar.MINUTE)
+        val tpd = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener{ _, hourOfDay, minute ->
             hour = "$hourOfDay:$minute"
             newTraining()
         }, hora, minutos, false)
@@ -57,8 +56,8 @@ class CalendarActivity : AppCompatActivity() {
     private fun newTraining() {
         val userId = user.currentUser?.uid
         val training = Training(date, hour)
-        var DBReference = baseDatos.getReference("/Trainings/$userId").push()
-        DBReference.setValue(training).addOnCompleteListener(this) { task ->
+        val dbReference = baseDatos.getReference("/Trainings/$userId").push()
+        dbReference.setValue(training).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this, "Entrenamiento guardado", Toast.LENGTH_SHORT)
                     .show()
@@ -73,7 +72,7 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
-    fun programNotification(dateString: String,timeString: String){
+    private fun programNotification(dateString: String, timeString: String){
         val not = NotificationUtils()
         not.setNotification(Calendar.getInstance().timeInMillis, timeString, dateString, this)
     }

@@ -70,8 +70,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="409dp"
+        android:layout_height="67dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:layout_weight="1.2"
             android:orientation="vertical">
 
@@ -95,6 +95,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/rectangle"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -104,8 +105,9 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:scaleType="fitXY"
+                    android:onClick="agradecimientos"
 
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/information" />
 
                 <ImageButton

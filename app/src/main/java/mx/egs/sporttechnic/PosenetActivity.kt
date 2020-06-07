@@ -41,7 +41,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
-import android.provider.MediaStore
 import android.util.Log
 import android.util.Size
 import android.util.SparseIntArray
@@ -52,15 +51,11 @@ import android.view.SurfaceView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.VideoView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import mx.egs.sporttechnic.R
-import org.tensorflow.lite.examples.posenet.MODEL_HEIGHT
-import org.tensorflow.lite.examples.posenet.MODEL_WIDTH
-import org.tensorflow.lite.examples.posenet.REQUEST_CAMERA_PERMISSION
+import mx.egs.sporttechnic.*
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
 import kotlin.math.abs
@@ -159,7 +154,7 @@ class PosenetActivity :
     private var sensorOrientation: Int? = null
 
     /** Reference to a Video videoUri   */
-    private var videoUri: Uri? = null
+    //private var videoUri: Uri? = null
 
 
     /** Abstract interface to someone holding a display surface.    */
@@ -703,7 +698,6 @@ class PosenetActivity :
          */
         private val ORIENTATIONS = SparseIntArray()
         private val FRAGMENT_DIALOG = "dialog"
-        private val VID_URI = "videoUri"
 
         init {
             ORIENTATIONS.append(Surface.ROTATION_0, 90)
@@ -711,16 +705,6 @@ class PosenetActivity :
             ORIENTATIONS.append(Surface.ROTATION_180, 270)
             ORIENTATIONS.append(Surface.ROTATION_270, 180)
         }
-/*
-    fun newInstance(uri: Uri):PosenetActivity{
-      val fragment = PosenetActivity()
-      val args = Bundle()
-      args.putParcelable(VID_URI, uri)
-      fragment.arguments = args
-      Log.d(TAG, "pase")
-      return fragment
-    }
- */
 
         /**
          * Tag for the [Log].

@@ -16,7 +16,7 @@
 
 @file:JvmName("Constants")
 
-package org.tensorflow.lite.examples.posenet
+package mx.egs.sporttechnic
 
 /** Request camera and external storage permission.   */
 const val REQUEST_CAMERA_PERMISSION = 1

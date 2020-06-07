@@ -29,7 +29,7 @@ class NotificationUtils {
             val hora = strTime[0].toInt()
             val minutos = strTime[1].toInt()
 
-            Log.d("time", "La fecha es $dia, $hora, $minutos")
+            Log.d("sports technic time", "La fecha es $dia, $hora, $minutos")
 
             val calendar: Calendar = Calendar.getInstance().apply {
                 timeInMillis = System.currentTimeMillis()
@@ -40,10 +40,7 @@ class NotificationUtils {
                 set(Calendar.MINUTE, minutos)
             }
 
-            //val calendar = Calendar.getInstance()
-            //calendar.timeInMillis = timeInMilliSeconds
-
-            Log.d("time", "Calendario es ${calendar.timeInMillis}")
+            Log.d("sports technic time", "Calendario es ${calendar.timeInMillis}")
 
             val pendingIntent = PendingIntent.getBroadcast(activity, 0, alarmIntent,
                 PendingIntent.FLAG_CANCEL_CURRENT)

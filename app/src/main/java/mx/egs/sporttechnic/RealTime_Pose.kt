@@ -23,27 +23,21 @@ class RealTime_Pose : AppCompatActivity() {
         val instrucciones = intent.getStringExtra("instrucciones")
         tvNombre.text = nombreEx
 
-        if (nombreEx == "Lagartijas") {
-            tvDescrip.text = instrucciones
-        }else if (nombreEx == "Fondos"){
-            tvDescrip.text = instrucciones
-        }else if (nombreEx == "Sentadillas"){
-            tvDescrip.text = instrucciones
-        }else if (nombreEx == "Desplantes"){
-            tvDescrip.text = instrucciones
-        }else if (nombreEx == "Abdominales"){
-            tvDescrip.text = instrucciones
-        }else if (nombreEx == "Plancha"){
-            tvDescrip.text = instrucciones
-        } else if (nombreEx == "Saltar la cuerda"){
-            tvDescrip.text = instrucciones
-        }else if (nombreEx == "Burpees"){
-            tvDescrip.text = instrucciones
+        when (nombreEx) {
+            "Lagartijas" -> tvDescrip.text = instrucciones
+            "Fondos" -> tvDescrip.text = instrucciones
+            "Sentadillas" -> tvDescrip.text = instrucciones
+            "Desplantes" -> tvDescrip.text = instrucciones
+            "Abdominales" -> tvDescrip.text = instrucciones
+            "Plancha" -> tvDescrip.text = instrucciones
+            "Saltar la cuerda" -> tvDescrip.text = instrucciones
+            "Burpees" -> tvDescrip.text = instrucciones
         }
 
     }
 
     fun regresarMenu(view:View){
         startActivity(Intent(this, MenuActiv::class.java))
+        finish()
     }
 }

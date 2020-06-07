@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -20,9 +20,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // Initialize Firebase Auth
-        auth = FirebaseAuth.getInstance();
+
+        auth = FirebaseAuth.getInstance()
         probarWifi()
+
     }
 
     override fun onStart() {
@@ -33,14 +34,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun probarWifi(){
+    private fun probarWifi(){
+        val connManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo: NetworkInfo? = connManager.activeNetworkInfo
+        if(networkInfo?.isConnected == false){
+            prenderWifi()
+        }
+    }
+
+    private fun prenderWifi(){
         val dialogo = AlertDialog.Builder(this)
         dialogo.setMessage("La app requiere internet, ¿Quiere prender el Wi-fi?")
             .setCancelable(false)
             .setPositiveButton("Si", object : DialogInterface.OnClickListener {
                 override fun onClick(p0: DialogInterface?, p1: Int) {
                     startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
-
                 }
             })
             .setNegativeButton("No", object : DialogInterface.OnClickListener {
@@ -66,7 +74,6 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     startActivity(Intent(this, MenuActiv::class.java))
                 } else {
-                    // If sign in fails, display a message to the user.
                     Toast.makeText(baseContext, "Falla en autenticación como invitado," +
                             " compruebe su conexión a internet.",
                         Toast.LENGTH_SHORT).show()

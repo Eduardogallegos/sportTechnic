@@ -11,9 +11,7 @@ class AdaptadorEjercicio (private val contexto: Context, var arrEjercicios: Arra
     RecyclerView.Adapter<AdaptadorEjercicio.RenglonEjercicio>() {
 
     var listenerEjercicios : ListenerRecyclerGrupos? = null
-    inner class RenglonEjercicio (var vistaRenglonExe : View): RecyclerView.ViewHolder(vistaRenglonExe){
-
-    }
+    inner class RenglonEjercicio (var vistaRenglonExe : View): RecyclerView.ViewHolder(vistaRenglonExe)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RenglonEjercicio {
         val vista = LayoutInflater.from(contexto).inflate(R.layout.renglon_ejercicio, parent, false)
