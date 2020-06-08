@@ -38,7 +38,7 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String, v
                 "Corrige tu técnica al hacer abdominales",
                 "situp","Acostado en el suelo, flexiona tus rodillas " +
                         "el torso sube y desciende lento ",
-                "dQw4w9WgXcQ"),
+                "06AkfzTWRE4"),
             ejercicio( "Plancha",
                 "Corrige tu técnica al hacer planchas",
                 "planks","Posición de lagartija, " +

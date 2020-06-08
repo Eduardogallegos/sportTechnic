@@ -11,9 +11,4 @@ class agradecimientosActiv : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agradecimientos)
     }
-
-    fun regresarMenu(view: View){
-        startActivity(Intent(this, MenuActiv::class.java))
-        finish()
-    }
 }
