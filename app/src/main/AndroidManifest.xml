@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".RealTime_Pose"></activity>
+        <activity android:name=".agradecimientosActiv"></activity>
+        <activity android:name=".RealTime_Pose" />
         <activity android:name=".DisplayUsers" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".CreateAccountActiv" />

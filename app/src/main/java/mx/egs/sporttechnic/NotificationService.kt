@@ -16,7 +16,7 @@ import java.util.*
 
 class NotificationService: JobIntentService() {
     private lateinit var mNotification: Notification
-    val JOB_ID = 1
+    private val JOB_ID = 1
 
     fun enqueueWork(context: Context, work: Intent) {
         enqueueWork(context, NotificationService::class.java, JOB_ID, work)
@@ -33,9 +33,6 @@ class NotificationService: JobIntentService() {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-            // Create the NotificationChannel, but only on API 26+ because
-            // the NotificationChannel class is new and not in the support library
 
             val context = this.applicationContext
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -63,16 +60,11 @@ class NotificationService: JobIntentService() {
         createChannel()
 
         var timestamp: Long = 0
-        if (intent != null && intent.extras != null) {
+        if (intent.extras != null) {
             timestamp = intent.extras!!.getLong("timestamp")
         }
 
-
-
-
         if (timestamp > 0) {
-
-
             val context = this.applicationContext
             val notifyIntent = Intent(this, MenuActiv::class.java)
 
@@ -87,7 +79,6 @@ class NotificationService: JobIntentService() {
 
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = timestamp
-
 
             val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT)
             val res = this.resources
@@ -120,7 +111,7 @@ class NotificationService: JobIntentService() {
             }
 
             val mNotificationId = createID()
-            var notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             // mNotificationId is a unique int for each notification that you must define
             notificationManager.notify(mNotificationId, mNotification)
         }

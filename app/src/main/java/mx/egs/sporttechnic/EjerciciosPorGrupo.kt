@@ -48,6 +48,8 @@ class EjerciciosPorGrupo : AppCompatActivity(), ListenerRecyclerGrupos {
         intEjercicio.putExtra("WORKOUT", workout)
         val instrucciones = adaptadorEjercicios?.arrEjercicios?.get(position)?.instrucciones
         intEjercicio.putExtra("instrucciones", instrucciones)
+        val tutorial = adaptadorEjercicios?.arrEjercicios?.get(position)?.tutorial
+        intEjercicio.putExtra("tutorial", tutorial)
         startActivity(intEjercicio)
     }
 }

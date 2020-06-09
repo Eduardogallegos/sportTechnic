@@ -1,13 +1,9 @@
 package mx.egs.sporttechnic
 
-import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
-import android.widget.Toast
 import androidx.annotation.NonNull
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.activity_ejercicio.*
@@ -22,7 +18,6 @@ class EjercicioActiv : AppCompatActivity(){
 
         configurarInterfaz()
 
-        //YouTube
         player.getPlayerUiController().showFullscreenButton(true)
         player.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
             override fun onReady(@NonNull youTubePlayer: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer) {
@@ -53,35 +48,46 @@ class EjercicioActiv : AppCompatActivity(){
     private fun configurarInterfaz() {
         val nombreEjercicio = intent.getStringExtra("WORKOUT")
         val instruccion = intent.getStringExtra("instrucciones")
+        val tutorial = intent.getStringExtra("tutorial")
         tvNombreEjercicio.text = nombreEjercicio
 
-        if (nombreEjercicio == "Lagartijas"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        }else if (nombreEjercicio == "Fondos"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        }else if (nombreEjercicio == "Sentadillas"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        }else if (nombreEjercicio == "Desplantes"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        }else if (nombreEjercicio == "Abdominales"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        }else if (nombreEjercicio == "Plancha"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        } else if (nombreEjercicio == "Saltar la cuerda"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
-        }else if (nombreEjercicio == "Burpees"){
-            tvDescripEjercicio.text = instruccion
-            link = "dQw4w9WgXcQ"
+        if (tutorial != null){
+            when (nombreEjercicio){
+                "Lagartijas" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Fondos" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Sentadillas" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Desplantes" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Abdominales" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Plancha" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Saltar la cuerda" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+                "Burpees" -> {
+                    tvDescripEjercicio.text = instruccion
+                    link = tutorial
+                }
+            }
         }
     }
-
 
     private fun getExName(intent2: Intent) {
         val nombreEjercicio = intent.getStringExtra("WORKOUT")
@@ -96,10 +102,4 @@ class EjercicioActiv : AppCompatActivity(){
         getExName(intent)
         startActivity(intent)
     }
-
-    companion object {
-        const val REQUEST_GALLERY_ACCESS = 2
-    }
-
-
 }

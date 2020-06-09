@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="386dp"
         app:srcCompat="@drawable/sports_logo" />
 
     <com.google.android.material.textfield.TextInputLayout

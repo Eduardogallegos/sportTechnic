@@ -12,9 +12,6 @@ class adaptadorGrupos (private val contexto: Context, var arrGrupos: Array<grupo
 {
     var listenerGrupos : ListenerRecyclerGrupos? = null
     inner class RenglonGrupo (var vistaRenglon: View): RecyclerView.ViewHolder(vistaRenglon)
-    {
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RenglonGrupo {
         val vista = LayoutInflater.from(contexto).inflate(R.layout.renglon_grupos, parent, false)

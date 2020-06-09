@@ -1,6 +1,5 @@
 package mx.egs.sporttechnic
 
-import android.R
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,11 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.ListFragment
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -60,7 +57,7 @@ class TrainingFragment : ListFragment() {
                     trainingArr.add("Entrenamiento:    ${training?.date} - ${training?.hour}")
                 }
                 val adaptador = ArrayAdapter<String>(context!!,
-                    R.layout.simple_expandable_list_item_1, trainingArr)
+                    android.R.layout.simple_expandable_list_item_1, trainingArr)
                 listAdapter = adaptador
             }
 

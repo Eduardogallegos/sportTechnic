@@ -43,7 +43,9 @@ class LogInActiv : AppCompatActivity() {
     private fun logInFirebase() {
         auth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(this){task->
             if(task.isSuccessful){
-                startActivity(Intent(this, MenuActiv::class.java))
+                val intent = Intent(this, MenuActiv::class.java)
+                intent.putExtra("INICIO", "true")
+                startActivity(intent)
                 finish()
             }else{
                 Toast.makeText(this, "Verifica que el correo y la contraseña estén correctos", Toast.LENGTH_SHORT).show()

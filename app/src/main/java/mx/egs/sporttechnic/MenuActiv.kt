@@ -1,18 +1,19 @@
 package mx.egs.sporttechnic
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
 
-    var AdaptadorGrupos : adaptadorGrupos? = null
+    private var AdaptadorGrupos : adaptadorGrupos? = null
     private lateinit var auth: FirebaseAuth
 
 
@@ -22,16 +23,38 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
 
         configurarRecycler()
         auth = FirebaseAuth.getInstance()
+
+        checarInicio()
     }
 
-    fun cerrarSesion(view: View){
-        auth.signOut()
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
+    private fun checarInicio() {
+        val inicio = intent.getStringExtra("INICIO")
+        if (inicio == "true"){
+            advertencia()
+        }
+    }
+
+    fun agradecimientos(view: View){
+        startActivity(Intent(this, agradecimientosActiv::class.java))
     }
 
     fun calendar(view: View){
         startActivity(Intent(this, CalendarActivity::class.java))
+    }
+
+    private fun advertencia(){
+        val dialogo = AlertDialog.Builder(this)
+        dialogo.setMessage("Esta app fue desarrollada con el objetivo de ayudar a correción de" +
+         " técnicas de ejercicio, no debe tomarse como guía definitiva. Consulta a un experto.")
+            .setCancelable(false)
+            .setTitle("Advertencia")
+            .setNegativeButton("Aceptar", object : DialogInterface.OnClickListener {
+                override fun onClick(dialogo: DialogInterface?, p1: Int) {
+                    dialogo?.dismiss()
+                }
+            })
+        val alerta = dialogo.create()
+        alerta.show()
     }
 
     private fun configurarRecycler() {
@@ -54,8 +77,8 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
         startActivity(intRecyclerEjercicios)
     }
 
-
     fun showUser(view: View){
         startActivity(Intent(this, DisplayUsers::class.java))
+        finish()
     }
 }

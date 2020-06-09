@@ -1,7 +1,6 @@
 package mx.egs.sporttechnic
 
 import android.content.Intent
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +22,6 @@ class CreateAccountActiv : AppCompatActivity() {
     private var birthday = ""
     private var mail = ""
     private var gender = ""
-    private  val TAG = "MyActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,16 +37,9 @@ class CreateAccountActiv : AppCompatActivity() {
         password2 = etPassVerif.text.toString()
         birthday = etBirthday.text.toString()
         mail = etMail.text.toString()
-        var radioButtonID = radioGroup.checkedRadioButtonId
-        var radioButton:RadioButton = findViewById(radioButtonID)
+        val radioButtonID = radioGroup.checkedRadioButtonId
+        val radioButton:RadioButton = findViewById(radioButtonID)
         gender= radioButton.text as String
-
-        Log.i(TAG, "Name: $name")
-        Log.i(TAG, "Pass1: $password")
-        Log.i(TAG, "Pass2: $password2")
-        Log.i(TAG, "Birthday: $birthday")
-        Log.i(TAG, "Mail: $mail")
-        Log.i(TAG, "Gender: $gender")
 
         if (name != "" && password != "" && password2 != "" && birthday != "" && mail != ""  && gender != ""){
             if(password.length >= 6){
@@ -70,16 +61,17 @@ class CreateAccountActiv : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(this){task ->
             if (task.isSuccessful){
                 sendEmailVerification()
-                var Fuid = auth.currentUser?.uid
-                var DBReference = baseDatos.getReference("/Users/$Fuid")
-                Log.i(TAG, "Firebase uid: $Fuid")
-                if(Fuid != null) {
+                val fUid = auth.currentUser?.uid
+                val dbReference = baseDatos.getReference("/Users/$fUid")
+                if(fUid != null) {
                     val user = Usuario(mail, birthday, name, gender)
-                    DBReference.setValue(user).addOnCompleteListener(this) { task2 ->
+                    dbReference.setValue(user).addOnCompleteListener(this) { task2 ->
                         if (task2.isSuccessful) {
                             Toast.makeText(this, "Cuenta creada para $mail", Toast.LENGTH_SHORT)
                                 .show()
-                            startActivity(Intent(this, MenuActiv::class.java))
+                            val intent = Intent(this, MenuActiv::class.java)
+                            intent.putExtra("INICIO", "true")
+                            startActivity(intent)
                             finish()
                         } else {
                             Toast.makeText(
@@ -104,7 +96,7 @@ class CreateAccountActiv : AppCompatActivity() {
                         "Verifica tu direccion ${user.email} con el correo que te enviamos",
                         Toast.LENGTH_SHORT).show()
                 } else {
-                    Log.e(TAG, "sendEmailVerification", task.exception)
+                    Log.e("sportsTechnic", "sendEmailVerification", task.exception)
                     Toast.makeText(baseContext,
                         "Failed to send verification email.",
                         Toast.LENGTH_SHORT).show()
