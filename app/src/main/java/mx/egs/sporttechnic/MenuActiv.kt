@@ -24,14 +24,15 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
         configurarRecycler()
         auth = FirebaseAuth.getInstance()
 
-        advertencia()
+        checarInicio()
     }
 
-    /*fun cerrarSesion(view: View){
-        auth.signOut()
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
-    }*/
+    private fun checarInicio() {
+        val inicio = intent.getStringExtra("INICIO")
+        if (inicio == "true"){
+            advertencia()
+        }
+    }
 
     fun agradecimientos(view: View){
         startActivity(Intent(this, agradecimientosActiv::class.java))

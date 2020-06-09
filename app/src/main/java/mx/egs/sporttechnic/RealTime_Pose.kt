@@ -37,7 +37,9 @@ class RealTime_Pose : AppCompatActivity() {
     }
 
     fun regresarMenu(view:View){
-        startActivity(Intent(this, MenuActiv::class.java))
+        val intent = Intent(this, MenuActiv::class.java)
+        intent.putExtra("INICIO", "false")
+        startActivity(intent)
         finish()
     }
 }

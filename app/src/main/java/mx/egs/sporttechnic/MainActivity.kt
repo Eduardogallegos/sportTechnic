@@ -29,7 +29,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(auth.currentUser != null){
-            startActivity(Intent(this, MenuActiv::class.java))
+            val intent = Intent(this, MenuActiv::class.java)
+            intent.putExtra("INICIO", "true")
+            startActivity(intent)
             finish()
         }
     }
@@ -72,7 +74,10 @@ class MainActivity : AppCompatActivity() {
         auth.signInAnonymously()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this, MenuActiv::class.java))
+                    val intent = Intent(this, MenuActiv::class.java)
+                    intent.putExtra("INICIO", "true")
+                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(baseContext, "Falla en autenticación como invitado," +
                             " compruebe su conexión a internet.",

@@ -69,7 +69,9 @@ class CreateAccountActiv : AppCompatActivity() {
                         if (task2.isSuccessful) {
                             Toast.makeText(this, "Cuenta creada para $mail", Toast.LENGTH_SHORT)
                                 .show()
-                            startActivity(Intent(this, MenuActiv::class.java))
+                            val intent = Intent(this, MenuActiv::class.java)
+                            intent.putExtra("INICIO", "true")
+                            startActivity(intent)
                             finish()
                         } else {
                             Toast.makeText(
