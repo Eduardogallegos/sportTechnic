@@ -13,7 +13,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
@@ -22,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth = FirebaseAuth.getInstance()
-        probarWifi()
+
+        probarWifi(this)
 
     }
 
@@ -36,10 +36,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun probarWifi(){
-        val connManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo: NetworkInfo? = connManager.activeNetworkInfo
-        if(networkInfo?.isConnected == false){
+    private fun probarWifi(context:Context){
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+        val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+        if (!isConnected){
             prenderWifi()
         }
     }
@@ -85,4 +86,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
+
 }
