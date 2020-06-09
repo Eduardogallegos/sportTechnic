@@ -23,31 +23,37 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         probarWifi(this)
-
     }
 
-    override fun onStart() {
-        super.onStart()
-        if(auth.currentUser != null){
-            val intent = Intent(this, MenuActiv::class.java)
-            intent.putExtra("INICIO", "true")
-            startActivity(intent)
-            finish()
-        }
+    override fun onRestart() {
+        super.onRestart()
+        probarWifi(this)
     }
 
+    override fun onResume() {
+        super.onResume()
+        probarWifi(this)
+    }
+    
     private fun probarWifi(context:Context){
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
         val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
         if (!isConnected){
             prenderWifi()
+        }else{
+            if(auth.currentUser != null) {
+                val intent = Intent(this, MenuActiv::class.java)
+                intent.putExtra("INICIO", "true")
+                startActivity(intent)
+                finish()
+            }
         }
     }
 
     private fun prenderWifi(){
         val dialogo = AlertDialog.Builder(this)
-        dialogo.setMessage("La app requiere internet, ¿Quiere prender el Wi-fi?")
+        dialogo.setMessage("La app requiere internet, ¿Quieres prender el Wi-fi?")
             .setCancelable(false)
             .setPositiveButton("Si", object : DialogInterface.OnClickListener {
                 override fun onClick(p0: DialogInterface?, p1: Int) {
