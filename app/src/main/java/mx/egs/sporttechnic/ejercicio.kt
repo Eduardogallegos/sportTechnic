@@ -55,7 +55,7 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String, v
                 "Corrige tu técnica al hacer burpees",
                 "burpee","Descendemos a posición de lagartija, " +
                         "pecho toca el suelo, nos reincoorporamos y hacemos un salto.",
-                "dQw4w9WgXcQ")
+                "Lb3vErt4TK4")
         )
     }
 
