@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
 	package
-		ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:2:3-53
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:2:3-53
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
-		ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
-		ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:1-6:12
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
-INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
 	android:targetSdkVersion
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
-		ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
-		ADDED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
-		INJECTED from D:\Sexto Semestre\moviles\sportTechnic\posenet\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml:4:3-15
+		INJECTED from C:\Users\lcast\AndroidStudioProjects\sportTechnic\posenet\src\main\AndroidManifest.xml

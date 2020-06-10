@@ -38,6 +38,7 @@ class NotificationUtils {
                 set(Calendar.YEAR, anio)
                 set(Calendar.HOUR_OF_DAY, hora)
                 set(Calendar.MINUTE, minutos)
+                set(Calendar.SECOND, 0)
             }
 
             Log.d("sports technic time", "Calendario es ${calendar.timeInMillis}")
