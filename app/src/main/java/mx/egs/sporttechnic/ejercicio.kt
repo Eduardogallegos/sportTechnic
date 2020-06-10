@@ -10,14 +10,14 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String, v
                 "Acuéstate boca abajo, " +
                         "con las manos apoyadas en el piso a la altura de los hombros," +
                         "empuja al suelo para poder levantarte",
-                "dQw4w9WgXcQ"),
+                "QiYpvU5FxgY"),
             ejercicio( "Fondos",
                 "Corrige tu técnica al hacer fondos",
                 "dips",
                 "Colocar las manos sobre un escalon, " +
                         "pies paralelos, descender unicamente con los brazos, " +
                         "al tocar el suelo con los gluteos subir",
-                "dQw4w9WgXcQ")
+                "guC64ssjt48")
         )
         val arrEjerciciosPierna = arrayOf(
             ejercicio("Sentadillas",
@@ -25,13 +25,13 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String, v
                 "squat","Pies a la altura de los hombros, " +
                         "descenso lento, sin que las rodillas pasen las puntas de los pies, " +
                         "al romper el paralelo, subir rápido",
-                "dQw4w9WgXcQ"),
+                "KftjaZ8Cylw"),
             ejercicio( "Desplantes",
                 "Corrige tu técnica al hacer Desplantes",
                 "halfsquat","Pies abiertos en tijera uno atras, otro adelante, " +
                         "descenso lento, sin que las rodilla delantera pase la punta del pie, " +
                         "al romper el paralelo, subir rápido",
-                "dQw4w9WgXcQ")
+                "vH39yG4UCAA")
         )
         val arrEjerciciosAbdomen = arrayOf(
             ejercicio("Abdominales",
@@ -43,7 +43,7 @@ class ejercicio (val nombre: String, val descripcion: String, val img: String, v
                 "Corrige tu técnica al hacer planchas",
                 "planks","Posición de lagartija, " +
                         "mantener espalda, cadera y rodillas rectas",
-                "dQw4w9WgXcQ")
+                "YFwmkJDWKns")
         )
         val arrEjerciciosCardio = arrayOf(
             ejercicio("Saltar la cuerda",

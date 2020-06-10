@@ -42,23 +42,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:gravity="center|center_horizontal"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
+
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:text="Ejercicio"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#9C27B0"
             android:textSize="24sp" />
-
 
         <TextView
             android:id="@+id/tvDescrip"
@@ -66,16 +66,17 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textAlignment="center"
-            android:textSize="18sp" />
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvDisclaimer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/disclaimer"
             android:textAlignment="textStart"
-            android:textSize="16sp"
-            android:textColor="#000000"/>
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
         <FrameLayout
             android:id="@+id/modelContenedor"
