@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="25dp"
         android:text="Proyecto desarrollado por:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
@@ -132,7 +132,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,9 +153,10 @@
         <TextView
             android:id="@+id/tvTImagenes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="59dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
+            android:gravity="center"
             android:text="Autores de las imágenes utilizadas:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -276,10 +279,12 @@
         <TextView
             android:id="@+id/tvTMusica"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
+            android:gravity="center"
             android:text="Autores de la música utilizada:"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <LinearLayout
@@ -288,18 +293,18 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView35"
+                android:id="@+id/tvM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="www.bensound.com" />
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/tvM2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Benjamin Tissot" />
         </LinearLayout>
 
     </LinearLayout>

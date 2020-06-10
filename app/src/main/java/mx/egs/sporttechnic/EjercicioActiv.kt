@@ -96,13 +96,9 @@ class EjercicioActiv : AppCompatActivity(){
         intent2.putExtra("instrucciones", instruccion)
     }
 
-    override fun onBackPressed() {
-    }
-
     fun posenet(view: View){
         val intent = Intent(this, RealTime_Pose::class.java)
         getExName(intent)
         startActivity(intent)
-        finish()
     }
 }

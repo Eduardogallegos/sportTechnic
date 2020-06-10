@@ -78,7 +78,6 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
         val grupo = AdaptadorGrupos?.arrGrupos?.get(position)?.nombre
         intRecyclerEjercicios.putExtra("GRUPO", grupo)
         startActivity(intRecyclerEjercicios)
-        finish()
     }
 
     fun showUser(view: View){

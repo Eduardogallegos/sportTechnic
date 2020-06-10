@@ -2,9 +2,9 @@ package mx.egs.sporttechnic
 
 import PosenetActivity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_real_time__pose.*
 
 class RealTime_Pose : AppCompatActivity() {
@@ -36,12 +36,10 @@ class RealTime_Pose : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-    }
-
     fun regresarMenu(view:View){
         val intent = Intent(this, MenuActiv::class.java)
         intent.putExtra("INICIO", "false")
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
     }
