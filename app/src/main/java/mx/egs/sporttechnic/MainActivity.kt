@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         probarWifi(this)
     }
-    
+
     private fun probarWifi(context:Context){
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
