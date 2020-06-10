@@ -70,15 +70,18 @@ class MenuActiv : AppCompatActivity(), ListenerRecyclerGrupos{
         recyclerGrupos.addItemDecoration(divisor)
     }
 
+    override fun onBackPressed() {
+    }
+
     override fun itemClicked(position: Int) {
         val intRecyclerEjercicios = Intent(this, EjerciciosPorGrupo::class.java)
         val grupo = AdaptadorGrupos?.arrGrupos?.get(position)?.nombre
         intRecyclerEjercicios.putExtra("GRUPO", grupo)
         startActivity(intRecyclerEjercicios)
+        finish()
     }
 
     fun showUser(view: View){
         startActivity(Intent(this, DisplayUsers::class.java))
-        finish()
     }
 }

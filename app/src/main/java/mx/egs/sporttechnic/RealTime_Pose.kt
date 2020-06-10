@@ -36,6 +36,9 @@ class RealTime_Pose : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+    }
+
     fun regresarMenu(view:View){
         val intent = Intent(this, MenuActiv::class.java)
         intent.putExtra("INICIO", "false")

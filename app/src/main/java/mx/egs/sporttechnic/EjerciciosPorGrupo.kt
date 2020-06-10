@@ -42,6 +42,9 @@ class EjerciciosPorGrupo : AppCompatActivity(), ListenerRecyclerGrupos {
         recyclerEjercicios.addItemDecoration(divisor)
     }
 
+    override fun onBackPressed() {
+    }
+
     override fun itemClicked(position: Int) {
         val intEjercicio = Intent(this, EjercicioActiv::class.java)
         val workout = adaptadorEjercicios?.arrEjercicios?.get(position)?.nombre
@@ -51,5 +54,6 @@ class EjerciciosPorGrupo : AppCompatActivity(), ListenerRecyclerGrupos {
         val tutorial = adaptadorEjercicios?.arrEjercicios?.get(position)?.tutorial
         intEjercicio.putExtra("tutorial", tutorial)
         startActivity(intEjercicio)
+        finish()
     }
 }
