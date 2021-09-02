@@ -13,6 +13,7 @@
 
 ## General Information
 Mobile app that assists you while doing your workout by pointing out good and bad movements to help you improving your technique.
+Developed for Android mobile phones.
 
 ### Developers:
 - [Eduardo Gallegos](https://github.com/Eduardogallegos)
@@ -21,12 +22,26 @@ Mobile app that assists you while doing your workout by pointing out good and ba
 - [Leonardo Castillejos](https://github.com/Eyiry)
 
 ## Technologies Used
-- [Tensorflow lite]()
-- [Android Studio]()
+- [Tensorflow lite](https://www.tensorflow.org/lite/)
+- [Android Studio](https://developer.android.com/studio/)
+- [Posenet](https://www.tensorflow.org/lite/examples/pose_estimation/overview)
 
 ## Features
-- With an AI model, the app gives you feedback of your movements, angles formed, etc.
 - The app provides video-tutorials where key aspects of the exercises are explained.
+- With an AI model, the app gives you feedback of your movements, angles formed, etc.
+- Excercise movements:
+    - Abs
+        - Plank
+        - Sit ups
+    - Arms
+        - Push ups
+        - Dips
+    - Cardio
+        - Burpees
+        - Jump Rope
+    - Leg
+        - Squats
+        - Lunge
 
 ## Screenshots
 ![App Home](img/app1.png)
@@ -34,7 +49,10 @@ Mobile app that assists you while doing your workout by pointing out good and ba
 ![Demo2](img/Demo2.png)
 
 ## Setup
-1. 
+1. Clone this repo.
+2. Compile the project using Android Studio.
+3. Generate APK.
+4. Install APK on Android phone.
 
 ## Acknowledgements
 Thanks to professor [Roberto Martínez Román](https://github.com/rmroman) for being the tutor on this project.
@@ -44,4 +62,4 @@ Feel free to contact us!
 - [Eduardo](mailto:egallegossolis@gmail.com)
 - [Pedro](mailto:pedro_corsob@outlook.com)
 - [Francisco](mailto:javier_z_t@hotmail.com)
-- [Leonardo](mailto:)
+- [Leonardo](mailto:l.castillejos@hotmail.com)
